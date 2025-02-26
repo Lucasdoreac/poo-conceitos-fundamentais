@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentQuestionIndex = 0;
   let score = 0;
   
+  // Carregar conteúdo dinâmico
+  loadDynamicContent();
+  
   // Configuração das abas
   setupTabs();
   
@@ -12,6 +15,124 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Inicialização do quiz
   initQuiz();
+  
+  // Função para carregar conteúdo dinâmico do arquivo data.js
+  function loadDynamicContent() {
+    if (window.siteData) {
+      // Carregar cards da seção de introdução
+      loadIntroCards();
+      
+      // Carregar abas de conceitos
+      loadConceitosContent();
+      
+      // Carregar cards de pilares
+      loadPilaresCards();
+      
+      // Carregar modais
+      loadModals();
+    }
+  }
+  
+  // Função para carregar os cards da introdução
+  function loadIntroCards() {
+    const cardsContainer = document.querySelector('#introducao .cards-container');
+    if (!cardsContainer || !window.siteData.intro) return;
+    
+    window.siteData.intro.cards.forEach(card => {
+      const cardElement = document.createElement('div');
+      cardElement.className = 'card';
+      cardElement.innerHTML = `
+        <div class="card-header">
+          <i class="${card.icon} card-icon"></i>
+          <h3 class="card-title">${card.title}</h3>
+        </div>
+        <div class="card-body">
+          <p class="card-text">${card.text}</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" data-modal="${card.modalId}" class="btn-more">Saiba mais</a>
+        </div>
+      `;
+      cardsContainer.appendChild(cardElement);
+    });
+  }
+  
+  // Função para carregar o conteúdo das abas de conceitos
+  function loadConceitosContent() {
+    const tabsNav = document.querySelector('#conceitos .tabs-nav');
+    const tabsContainer = document.querySelector('#conceitos .tabs');
+    if (!tabsNav || !tabsContainer || !window.siteData.conceitos) return;
+    
+    // Limpar navegação de abas
+    tabsNav.innerHTML = '';
+    
+    // Adicionar botões de navegação e conteúdo das abas
+    window.siteData.conceitos.tabs.forEach((tab, index) => {
+      // Criar botão da aba
+      const button = document.createElement('button');
+      button.className = `tab-button ${index === 0 ? 'active' : ''}`;
+      button.setAttribute('data-tab', tab.id);
+      button.textContent = tab.title;
+      tabsNav.appendChild(button);
+      
+      // Criar conteúdo da aba
+      const content = document.createElement('div');
+      content.id = tab.id;
+      content.className = `tab-content ${index === 0 ? 'active' : ''}`;
+      content.innerHTML = tab.content;
+      tabsContainer.appendChild(content);
+    });
+  }
+  
+  // Função para carregar os cards dos pilares
+  function loadPilaresCards() {
+    const cardsContainer = document.querySelector('#pilares .cards-container');
+    if (!cardsContainer || !window.siteData.pilares) return;
+    
+    window.siteData.pilares.cards.forEach(card => {
+      const cardElement = document.createElement('div');
+      cardElement.className = 'card';
+      cardElement.innerHTML = `
+        <div class="card-header" style="background-color: ${card.color};">
+          <i class="${card.icon} card-icon"></i>
+          <h3 class="card-title">${card.title}</h3>
+        </div>
+        <div class="card-body">
+          <p class="card-text">${card.text}</p>
+          <h4>Principais conceitos:</h4>
+          <ul>
+            ${card.concepts.map(concept => `<li>${concept}</li>`).join('')}
+          </ul>
+          <h4>Exemplo:</h4>
+          <pre><code>${card.code}</code></pre>
+        </div>
+        <div class="card-footer">
+          <a href="#" data-modal="${card.modalId}" class="btn-more">Exemplos avançados</a>
+        </div>
+      `;
+      cardsContainer.appendChild(cardElement);
+    });
+  }
+  
+  // Função para carregar os modais
+  function loadModals() {
+    const modalsContainer = document.getElementById('modals-container');
+    if (!modalsContainer || !window.siteData.modals) return;
+    
+    window.siteData.modals.modals.forEach(modal => {
+      const modalElement = document.createElement('div');
+      modalElement.id = modal.id;
+      modalElement.className = 'modal';
+      modalElement.innerHTML = `
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2 class="modal-title">${modal.title}</h2>
+          ${modal.content}
+        </div>
+      `;
+      modalsContainer.appendChild(modalElement);
+    });
+  }
   
   // Função para configurar as abas
   function setupTabs() {
@@ -33,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Ativar a primeira aba por padrão
-    if (tabButtons.length > 0) {
+    if (tabButtons.length > 0 && !document.querySelector('.tab-button.active')) {
       tabButtons[0].click();
     }
   }
@@ -44,7 +165,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeButtons = document.querySelectorAll('.close-modal');
     
     modalTriggers.forEach(trigger => {
-      trigger.addEventListener('click', () => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
         const modalId = trigger.getAttribute('data-modal');
         document.getElementById(modalId).style.display = 'block';
       });
@@ -186,6 +308,21 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     ];
     
+    // Construir o HTML para o quiz
+    const quizHTML = `
+      <div class="quiz-question">
+        <!-- O conteúdo será preenchido via JavaScript -->
+      </div>
+      
+      <div class="quiz-nav">
+        <button id="prev-question" class="quiz-button" disabled>Anterior</button>
+        <button id="next-question" class="quiz-button" disabled>Próxima</button>
+        <button id="submit-quiz" class="quiz-button" style="display: none;">Finalizar</button>
+      </div>
+    `;
+    
+    quizContainer.innerHTML = quizHTML;
+    
     // Configurar navegação do quiz
     const prevButton = document.getElementById('prev-question');
     const nextButton = document.getElementById('next-question');
@@ -245,6 +382,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const nextButton = document.getElementById('next-question');
         if (nextButton) {
           nextButton.disabled = false;
+        }
+        
+        // Habilitar o botão finalizar se estiver na última questão
+        const submitButton = document.getElementById('submit-quiz');
+        if (submitButton && submitButton.style.display === 'block') {
+          submitButton.disabled = false;
         }
       });
     });
@@ -330,16 +473,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Smooth scroll para links de navegação
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 70,
-          behavior: 'smooth'
-        });
+      if (!this.getAttribute('data-modal')) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
