@@ -5,6 +5,3 @@ baseurl: "/poo-conceitos-fundamentais"
 url: "https://lucasdoreac.github.io"
 github_username: Lucasdoreac
 markdown: kramdown
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
