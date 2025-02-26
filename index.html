@@ -3,183 +3,357 @@ layout: default
 title: Programação Orientada a Objetos - Conceitos Fundamentais
 ---
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <meta name="description" content="Site educativo sobre os conceitos fundamentais da Programação Orientada a Objetos (POO)">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- Cabeçalho -->
-  <header class="site-header">
+<!-- Cabeçalho -->
+<header class="site-header">
+  <div class="container">
+    <h1 class="site-title">Programação Orientada a Objetos</h1>
+    <p class="site-description">Aprenda os conceitos fundamentais, princípios e aplicações práticas da Programação Orientada a Objetos</p>
+  </div>
+</header>
+
+<!-- Navegação -->
+<nav class="main-nav">
+  <div class="container nav-container">
+    <a href="#" class="nav-logo">POO Fundamentos</a>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#introducao" class="nav-link">Introdução</a></li>
+      <li class="nav-item"><a href="#conceitos" class="nav-link">Conceitos</a></li>
+      <li class="nav-item"><a href="#pilares" class="nav-link">Pilares</a></li>
+      <li class="nav-item"><a href="#exemplos" class="nav-link">Exemplos</a></li>
+      <li class="nav-item"><a href="#quiz" class="nav-link">Quiz</a></li>
+      <li class="nav-item"><a href="#recursos" class="nav-link">Recursos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Conteúdo Principal -->
+<main>
+  <section id="introducao" class="section">
     <div class="container">
-      <h1 class="site-title">Programação Orientada a Objetos</h1>
-      <p class="site-description">Aprenda os conceitos fundamentais, princípios e aplicações práticas da Programação Orientada a Objetos</p>
+      <h2 class="section-title">O que é Programação Orientada a Objetos?</h2>
+      <p class="section-subtitle">Um paradigma de programação baseado no conceito de "objetos" que contêm dados e código</p>
+      
+      <!-- Cards da seção de introdução (História, Definição, Vantagens) -->
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-history card-icon"></i>
+            <h3 class="card-title">História da POO</h3>
+          </div>
+          <div class="card-body">
+            <p>A POO surgiu nos anos 1960 com o Simula, a primeira linguagem a usar o conceito de classes e objetos. Foi popularizada pelo Smalltalk nos anos 1970 e se tornou mainstream com C++ e Java nas décadas seguintes.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-info-circle card-icon"></i>
+            <h3 class="card-title">Definição</h3>
+          </div>
+          <div class="card-body">
+            <p>POO é um paradigma baseado no conceito de objetos que contêm dados (atributos) e código (métodos). Estrutura programas combinando dados e comportamentos em entidades coesas (objetos).</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-thumbs-up card-icon"></i>
+            <h3 class="card-title">Vantagens</h3>
+          </div>
+          <div class="card-body">
+            <p>A POO promove reusabilidade, modularidade, manutenibilidade e escalabilidade. Permite modelar o mundo real com maior fidelidade e organizar código de forma natural e intuitiva.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
   
-  <!-- Navegação -->
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="#" class="nav-logo">POO Fundamentos</a>
-      <ul class="nav-list">
-        <li class="nav-item"><a href="#introducao" class="nav-link">Introdução</a></li>
-        <li class="nav-item"><a href="#conceitos" class="nav-link">Conceitos</a></li>
-        <li class="nav-item"><a href="#pilares" class="nav-link">Pilares</a></li>
-        <li class="nav-item"><a href="#exemplos" class="nav-link">Exemplos</a></li>
-        <li class="nav-item"><a href="#quiz" class="nav-link">Quiz</a></li>
-        <li class="nav-item"><a href="#recursos" class="nav-link">Recursos</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <!-- Conteúdo Principal -->
-  <main>
-    <section id="introducao" class="section">
-      <div class="container">
-        <h2 class="section-title">O que é Programação Orientada a Objetos?</h2>
-        <p class="section-subtitle">Um paradigma de programação baseado no conceito de "objetos" que contêm dados e código</p>
-        
-        <!-- Cards da seção de introdução (História, Definição, Vantagens) -->
-        <div class="cards-container">
-          <!-- Cards serão carregados via JavaScript -->
-        </div>
-      </div>
-    </section>
-    
-    <section id="conceitos" class="section" style="background-color: #f8f9fa;">
-      <div class="container">
-        <h2 class="section-title">Conceitos Fundamentais</h2>
-        <p class="section-subtitle">Entenda os blocos de construção essenciais da programação orientada a objetos</p>
-        
-        <!-- Abas de conceitos (Classes, Objetos, Atributos, Métodos, Mensagens) -->
-        <div class="tabs">
-          <!-- Conteúdo das abas será carregado via JavaScript -->
-        </div>
-      </div>
-    </section>
-    
-    <section id="pilares" class="section">
-      <div class="container">
-        <h2 class="section-title">Os Quatro Pilares da POO</h2>
-        <p class="section-subtitle">Princípios fundamentais que sustentam a orientação a objetos</p>
-        
-        <!-- Cards dos pilares (Encapsulamento, Herança, Polimorfismo, Abstração) -->
-        <div class="cards-container">
-          <!-- Cards serão carregados via JavaScript -->
-        </div>
-      </div>
-    </section>
-    
-    <section id="exemplos" class="section" style="background-color: #f8f9fa;">
-      <div class="container">
-        <h2 class="section-title">Exemplos Práticos</h2>
-        <p class="section-subtitle">Veja a POO em ação com exemplos reais em diferentes linguagens</p>
-        
-        <!-- Abas de exemplos (Java, Python, C#, JavaScript) -->
-        <div class="tabs">
-          <!-- Conteúdo das abas será carregado via JavaScript -->
-        </div>
-      </div>
-    </section>
-    
-    <section id="quiz" class="section">
-      <div class="container">
-        <h2 class="section-title">Teste seus Conhecimentos</h2>
-        <p class="section-subtitle">Verifique o quanto você aprendeu sobre POO com este quiz interativo</p>
-        
-        <!-- Quiz interativo -->
-        <div class="quiz-container">
-          <!-- Conteúdo do quiz será carregado via JavaScript -->
-        </div>
-      </div>
-    </section>
-    
-    <section id="recursos" class="section" style="background-color: #f8f9fa;">
-      <div class="container">
-        <h2 class="section-title">Recursos de Aprendizagem</h2>
-        <p class="section-subtitle">Links e materiais para aprofundar seus conhecimentos em POO</p>
-        
-        <!-- Categorias de recursos (Documentação, Tutoriais, Exemplos, Livros, etc.) -->
-        <div class="resources-categories">
-          <!-- Categorias serão carregadas via JavaScript -->
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Rodapé -->
-  <footer class="site-footer">
+  <section id="conceitos" class="section" style="background-color: #f8f9fa;">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="footer-title">Sobre este Site</h3>
-          <p>
-            Este site foi criado como um recurso educacional completo sobre Programação Orientada a Objetos (POO).
-            O conteúdo abrange conceitos fundamentais, exemplos práticos e recursos de aprendizagem.
-          </p>
+      <h2 class="section-title">Conceitos Fundamentais</h2>
+      <p class="section-subtitle">Entenda os blocos de construção essenciais da programação orientada a objetos</p>
+      
+      <!-- Conteúdo Básico (em vez de abas interativas que podem não funcionar corretamente) -->
+      <div class="content-block">
+        <h3>Classes</h3>
+        <p>Classes são modelos ou blueprints que definem as características e comportamentos que os objetos de um determinado tipo terão. Elas encapsulam dados (atributos) e comportamentos (métodos).</p>
+        
+        <h3>Objetos</h3>
+        <p>Objetos são instâncias concretas de uma classe. Cada objeto tem seus próprios atributos (estado) e acesso aos métodos definidos na classe (comportamento).</p>
+        
+        <h3>Atributos</h3>
+        <p>Atributos são as variáveis que armazenam os dados de um objeto. Representam as características ou propriedades que um objeto possui.</p>
+        
+        <h3>Métodos</h3>
+        <p>Métodos são funções definidas dentro de uma classe que descrevem os comportamentos dos objetos. Eles podem manipular os atributos e interagir com outros objetos.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="pilares" class="section">
+    <div class="container">
+      <h2 class="section-title">Os Quatro Pilares da POO</h2>
+      <p class="section-subtitle">Princípios fundamentais que sustentam a orientação a objetos</p>
+      
+      <!-- Cards dos pilares (Encapsulamento, Herança, Polimorfismo, Abstração) -->
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-lock card-icon"></i>
+            <h3 class="card-title">Encapsulamento</h3>
+          </div>
+          <div class="card-body">
+            <p>Encapsulamento é o princípio de esconder os detalhes internos de um objeto e expor apenas o necessário. Protege os dados e fornece uma interface controlada para acessá-los.</p>
+          </div>
         </div>
         
-        <div class="footer-section">
-          <h3 class="footer-title">Navegação Rápida</h3>
-          <ul class="footer-links">
-            <li class="footer-link"><a href="#introducao">Introdução</a></li>
-            <li class="footer-link"><a href="#conceitos">Conceitos</a></li>
-            <li class="footer-link"><a href="#pilares">Pilares</a></li>
-            <li class="footer-link"><a href="#exemplos">Exemplos</a></li>
-            <li class="footer-link"><a href="#quiz">Quiz</a></li>
-            <li class="footer-link"><a href="#recursos">Recursos</a></li>
-          </ul>
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-sitemap card-icon"></i>
+            <h3 class="card-title">Herança</h3>
+          </div>
+          <div class="card-body">
+            <p>Herança permite que uma classe (filha) herde atributos e métodos de outra classe (pai). Promove reusabilidade e estabelece uma relação "é um" entre classes.</p>
+          </div>
         </div>
         
-        <div class="footer-section">
-          <h3 class="footer-title">Conecte-se</h3>
-          <ul class="social-links">
-            <li class="social-item">
-              <a href="https://github.com/Lucasdoreac/poo-conceitos-fundamentais" class="social-link" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <i class="fab fa-linkedin"></i>
-              </a>
-            </li>
-          </ul>
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-random card-icon"></i>
+            <h3 class="card-title">Polimorfismo</h3>
+          </div>
+          <div class="card-body">
+            <p>Polimorfismo permite que objetos de diferentes classes sejam tratados como objetos de uma classe comum. Um método pode ter múltiplas implementações dependendo do tipo do objeto.</p>
+          </div>
         </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-project-diagram card-icon"></i>
+            <h3 class="card-title">Abstração</h3>
+          </div>
+          <div class="card-body">
+            <p>Abstração é o processo de identificar características essenciais e ignorar detalhes irrelevantes. Permite focar no que um objeto é e faz, não em como ele faz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="exemplos" class="section" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="section-title">Exemplos Práticos</h2>
+      <p class="section-subtitle">Veja a POO em ação com exemplos reais em diferentes linguagens</p>
+      
+      <!-- Exemplo em Java -->
+      <div class="code-example">
+        <h3>Exemplo em Java</h3>
+        <pre><code class="language-java">
+// Definição de uma classe em Java
+public class Pessoa {
+    // Atributos
+    private String nome;
+    private int idade;
+    
+    // Construtor
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+    
+    // Métodos
+    public String getNome() {
+        return nome;
+    }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public int getIdade() {
+        return idade;
+    }
+    
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+    
+    public void apresentar() {
+        System.out.println("Olá, meu nome é " + nome + " e tenho " + idade + " anos.");
+    }
+}
+
+// Criando objetos
+public class Main {
+    public static void main(String[] args) {
+        Pessoa pessoa1 = new Pessoa("João", 30);
+        pessoa1.apresentar();
+        
+        Pessoa pessoa2 = new Pessoa("Maria", 25);
+        pessoa2.apresentar();
+    }
+}
+        </code></pre>
       </div>
       
-      <div class="footer-bottom">
-        <p class="footer-text">&copy; 2025 POO Fundamentos. Todos os direitos reservados.</p>
+      <!-- Exemplo em Python -->
+      <div class="code-example">
+        <h3>Exemplo em Python</h3>
+        <pre><code class="language-python">
+# Definição de uma classe em Python
+class Pessoa:
+    # Construtor
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+    
+    # Métodos
+    def apresentar(self):
+        print(f"Olá, meu nome é {self.nome} e tenho {self.idade} anos.")
+
+# Criando objetos
+pessoa1 = Pessoa("João", 30)
+pessoa1.apresentar()
+
+pessoa2 = Pessoa("Maria", 25)
+pessoa2.apresentar()
+        </code></pre>
       </div>
     </div>
-  </footer>
+  </section>
   
-  <!-- Modais -->
-  <div id="modals-container">
-    <!-- Modais serão carregados via JavaScript -->
+  <section id="quiz" class="section">
+    <div class="container">
+      <h2 class="section-title">Teste seus Conhecimentos</h2>
+      <p class="section-subtitle">Verifique o quanto você aprendeu sobre POO com este quiz interativo</p>
+      
+      <!-- Quiz simples em HTML estático -->
+      <div class="quiz-container">
+        <div class="quiz-question">
+          <h3>1. Qual é o principal objetivo da Programação Orientada a Objetos (POO)?</h3>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q1" value="a"> Reduzir a complexidade do código</label></li>
+            <li><label><input type="radio" name="q1" value="b"> Facilitar a manutenção do código</label></li>
+            <li><label><input type="radio" name="q1" value="c"> Modelar entidades do mundo real como objetos de software</label></li>
+            <li><label><input type="radio" name="q1" value="d"> Todas as alternativas acima</label></li>
+          </ul>
+        </div>
+        
+        <div class="quiz-question">
+          <h3>2. O que é uma classe na POO?</h3>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q2" value="a"> Uma instância de um objeto</label></li>
+            <li><label><input type="radio" name="q2" value="b"> Um modelo ou blueprint para criar objetos</label></li>
+            <li><label><input type="radio" name="q2" value="c"> Um método específico de programação</label></li>
+            <li><label><input type="radio" name="q2" value="d"> Um tipo de variável</label></li>
+          </ul>
+        </div>
+        
+        <button class="quiz-btn" onclick="alert('Respostas corretas: 1-d, 2-b')">Verificar Respostas</button>
+      </div>
+    </div>
+  </section>
+  
+  <section id="recursos" class="section" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="section-title">Recursos de Aprendizagem</h2>
+      <p class="section-subtitle">Links e materiais para aprofundar seus conhecimentos em POO</p>
+      
+      <!-- Lista de recursos estática -->
+      <div class="resources-list">
+        <div class="resource-category">
+          <h3><i class="fas fa-book"></i> Documentação Oficial</h3>
+          <ul>
+            <li><a href="https://docs.oracle.com/javase/tutorial/java/concepts/" target="_blank">Tutorial de POO em Java (Oracle)</a></li>
+            <li><a href="https://docs.python.org/3/tutorial/classes.html" target="_blank">Classes em Python (Python.org)</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/oop" target="_blank">POO em C# (Microsoft)</a></li>
+          </ul>
+        </div>
+        
+        <div class="resource-category">
+          <h3><i class="fas fa-laptop-code"></i> Tutoriais</h3>
+          <ul>
+            <li><a href="https://www.w3schools.com/java/java_oop.asp" target="_blank">POO em Java (W3Schools)</a></li>
+            <li><a href="https://realpython.com/python3-object-oriented-programming/" target="_blank">POO em Python (Real Python)</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming" target="_blank">POO em JavaScript (MDN)</a></li>
+          </ul>
+        </div>
+        
+        <div class="resource-category">
+          <h3><i class="fas fa-graduation-cap"></i> Cursos Online</h3>
+          <ul>
+            <li><a href="https://www.coursera.org/learn/orientacao-a-objetos-com-java" target="_blank">Orientação a Objetos com Java (Coursera)</a></li>
+            <li><a href="https://www.udemy.com/course/poo-java/" target="_blank">POO do Zero ao Profissional (Udemy)</a></li>
+            <li><a href="https://www.edx.org/course/object-oriented-programming-in-python-2" target="_blank">POO em Python (edX)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Rodapé -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">Sobre este Site</h3>
+        <p>
+          Este site foi criado como um recurso educacional completo sobre Programação Orientada a Objetos (POO).
+          O conteúdo abrange conceitos fundamentais, exemplos práticos e recursos de aprendizagem.
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Navegação Rápida</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="#introducao">Introdução</a></li>
+          <li class="footer-link"><a href="#conceitos">Conceitos</a></li>
+          <li class="footer-link"><a href="#pilares">Pilares</a></li>
+          <li class="footer-link"><a href="#exemplos">Exemplos</a></li>
+          <li class="footer-link"><a href="#quiz">Quiz</a></li>
+          <li class="footer-link"><a href="#recursos">Recursos</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Conecte-se</h3>
+        <ul class="social-links">
+          <li class="social-item">
+            <a href="https://github.com/Lucasdoreac/poo-conceitos-fundamentais" class="social-link" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-text">&copy; 2025 POO Fundamentos. Todos os direitos reservados.</p>
+    </div>
   </div>
-  
-  <!-- Scripts -->
-  <script src="{{ site.baseurl }}/js/data.js"></script>
-  <script src="{{ site.baseurl }}/js/scripts.js"></script>
-</body>
-</html>
+</footer>
+
+<!-- Link para CSS personalizado -->
+<link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- Scripts -->
+<script src="{{ site.baseurl }}/js/scripts.js"></script>
